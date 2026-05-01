@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gear6Studios</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fafafa;
+    color: #111;
+}
+
+header {
+    text-align: center;
+    padding: 16px;
+    font-weight: 600;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.tab.active {
+    border-bottom: 2px solid black;
+    font-weight: 600;
+}
+
+.content {
+    display: none;
+    padding: 12px;
+}
+
+.content.active {
+    display: block;
+}
+
+.embed {
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+Gear6Studios — Shoot Guide
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+    <div class="tab active" onclick="showTab('puja')">🪔 Puja</div>
+    <div class="tab" onclick="showTab('poses')">📸 Poses</div>
+    <div class="tab" onclick="showTab('haldi')">🌼 Haldi</div>
+    <div class="tab" onclick="showTab('insta')">📷 Insta</div>
+</div>
+
+<!-- PUJA -->
+<div id="puja" class="content active">
+    <div class="embed">
+        <a data-pin-do="embedBoard"
+           href="https://www.pinterest.com/gear6studios/wedding/wedding-puja/">
+        </a>
+    </div>
+</div>
+
+<!-- POSES -->
+<div id="poses" class="content">
+    <div class="embed">
+        <a data-pin-do="embedBoard"
+           href="https://www.pinterest.com/gear6studios/wedding/wedding-photoshoot/">
+        </a>
+    </div>
+</div>
+
+<!-- HALDI -->
+<div id="haldi" class="content">
+    <div class="embed">
+        <a data-pin-do="embedBoard"
+           href="https://www.pinterest.com/gear6studios/wedding/haldipithi/">
+        </a>
+    </div>
+</div>
+
+<!-- INSTAGRAM -->
+<div id="insta" class="content">
+    <div class="embed">
+        <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DXo_PPDDzBV/"
+            data-instgrm-version="14"
+            style="max-width: 540px; width:100%;">
+        </blockquote>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+function showTab(tabId) {
+    const contents = document.querySelectorAll('.content');
+    const tabs = document.querySelectorAll('.tab');
+
+    contents.forEach(c => c.classList.remove('active'));
+    tabs.forEach(t => t.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>
